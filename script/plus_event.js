@@ -6,7 +6,4 @@ document.getElementById('plus-phone').addEventListener('click', () => {
     const newQuantityPhone = quantityPhoneInt + 1;
     quantityPhone.value = newQuantityPhone;
 
-    const subTotalField = document.getElementById('subtotal');
-    const subtotalString = subTotalField.innerText;
-    const subtotalInt = 
 });
