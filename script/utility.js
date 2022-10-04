@@ -1,32 +1,22 @@
-function getValueFromInputFieldById(inputFiledID){
-    const valueFromInputField = document.getElementById(inputFiledID);
-    const valueFromInputFieldString = valueFromInputField.value;
-    const valueFromInputFieldInt = parseInt(valueFromInputFieldString); 
+function updateInputNumber(isIncrease, id){
+    const inputField = document.getElementById(id);
+    const inputFieldString = inputField.value;
+    const inputFieldValue = parseInt(inputFieldString);
+
+    let newUnitQuantity;
+
+    if(isIncrease){
+        newUnitQuantity = inputFieldValue + 1;
+    } else {
+        newUnitQuantity = inputFieldValue - 1;
+    }
+
+    inputField.value = newUnitQuantity;
+    return newUnitQuantity;
 }
 
-
-function getValueFromTextFieldById(textFiledID){
-    const valueFromTextFiled = document.getElementById(textFiledID);
-    const valueFromTextFiledString = valueFromTextFiled.innerText;
-    const valueFromTextFiledInt = parseInt(valueFromTextFiledString);
-}
-
-function setTextValueByID(textField, value){
-    const getTextFieldId = document.getElementById(textField);
-    getTextFieldId.innerText = value;
-    return getTextFieldId;
-}
-
-function setInputValueByID(inputField, value){
-    const getInputField = document.getElementById(inputField);
-    getInputField.value = value;
-    return getInputField;
-}
-
-
-//function to set price * quantity
-function setTextPriceTotal(phonePrice, inputFiledValue, price){
-    const totalPrice = document.getElementById(phonePrice);
-    const setTotalPrice = totalPrice.innerText = document.getElementById(inputFiledValue).value * price;
-    return setTotalPrice;
+function updateItemTotalPrice(newUnitQuantity, unitPrice, id){
+    const totalCasePrice = newUnitQuantity * unitPrice;
+    const unitTotalText = document.getElementById(id);
+    unitTotalText.innerText = totalCasePrice;
 }
