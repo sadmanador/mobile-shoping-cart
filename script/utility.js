@@ -22,3 +22,11 @@ function setInputValueByID(inputField, value){
     getInputField.value = value;
     return getInputField;
 }
+
+
+//function to set price * quantity
+function setTextPriceTotal(phonePrice, inputFiledValue, price){
+    const totalPrice = document.getElementById(phonePrice);
+    const setTotalPrice = totalPrice.innerText = document.getElementById(inputFiledValue).value * price;
+    return setTotalPrice;
+}

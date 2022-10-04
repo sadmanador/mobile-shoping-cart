@@ -6,8 +6,7 @@ document.getElementById('plus-phone').addEventListener('click', () => {
     const newQuantityPhone = quantityPhoneInt + 1;
     const setInputValue = setInputValueByID('quantity-phone', newQuantityPhone);
 
-    const totalPhonePrice = document.getElementById('phone-price');
-    totalPhonePrice.innerText = document.getElementById('quantity-phone').value * 1219;
+    const totalPhonePrice = setTextPriceTotal('phone-price', 'quantity-phone', 1219);
 });
 
 
@@ -22,7 +21,6 @@ document.getElementById('minus-phone').addEventListener('click', () => {
     const newQuantityPhone = quantityPhoneInt - 1;
     const setNewQuant = setInputValueByID('quantity-phone', newQuantityPhone);
 
-    const totalPhonePrice = document.getElementById('phone-price');
-    totalPhonePrice.innerText = document.getElementById('quantity-phone').value * 1219;
+    const totalPhonePrice = setTextPriceTotal('phone-price', 'quantity-phone', 1219);
 });
 
